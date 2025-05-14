@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  etl:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env
+      - ./kaggle.json:/root/.kaggle/kaggle.json
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: "no" 
